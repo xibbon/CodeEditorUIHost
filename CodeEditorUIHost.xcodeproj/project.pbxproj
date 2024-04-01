@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		4933C7DE2BB73EA800722563 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933C7DD2BB73EA800722563 /* ContentView.swift */; };
 		4933C7E02BB73EA900722563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4933C7DF2BB73EA900722563 /* Assets.xcassets */; };
 		4933C7E32BB73EA900722563 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4933C7E22BB73EA900722563 /* Preview Assets.xcassets */; };
+		4933C7EB2BB73EC300722563 /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C7EA2BB73EC300722563 /* CodeEditorUI */; };
+		4933C7EE2BB742CA00722563 /* TreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C7ED2BB742CA00722563 /* TreeSitter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4933C7EB2BB73EC300722563 /* CodeEditorUI in Frameworks */,
+				4933C7EE2BB742CA00722563 /* TreeSitter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +41,7 @@
 			children = (
 				4933C7DA2BB73EA800722563 /* CodeEditorUIHost */,
 				4933C7D92BB73EA800722563 /* Products */,
+				4933C7FB2BB7621400722563 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4933C7FB2BB7621400722563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +95,10 @@
 			dependencies = (
 			);
 			name = CodeEditorUIHost;
+			packageProductDependencies = (
+				4933C7EA2BB73EC300722563 /* CodeEditorUI */,
+				4933C7ED2BB742CA00722563 /* TreeSitter */,
+			);
 			productName = CodeEditorUIHost;
 			productReference = 4933C7D82BB73EA800722563 /* CodeEditorUIHost.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,10 @@
 				Base,
 			);
 			mainGroup = 4933C7CF2BB73EA800722563;
+			packageReferences = (
+				4933C7E92BB73EC300722563 /* XCLocalSwiftPackageReference "../CodeEditorUI" */,
+				4933C7EC2BB742CA00722563 /* XCRemoteSwiftPackageReference "tree-sitter" */,
+			);
 			productRefGroup = 4933C7D92BB73EA800722563 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +300,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +330,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +366,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4933C7E92BB73EC300722563 /* XCLocalSwiftPackageReference "../CodeEditorUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../CodeEditorUI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4933C7EC2BB742CA00722563 /* XCRemoteSwiftPackageReference "tree-sitter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tree-sitter/tree-sitter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4933C7EA2BB73EC300722563 /* CodeEditorUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodeEditorUI;
+		};
+		4933C7ED2BB742CA00722563 /* TreeSitter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4933C7EC2BB742CA00722563 /* XCRemoteSwiftPackageReference "tree-sitter" */;
+			productName = TreeSitter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4933C7D02BB73EA800722563 /* Project object */;
 }

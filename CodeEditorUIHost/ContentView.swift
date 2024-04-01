@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
+import CodeEditorUI
+import TreeSitter
 
 struct ContentView: View {
+    @State var files: [EditedItem] = [EditedItem(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        CodeEditorShell(openFiles: $files)
+            .padding()
     }
 }
 
