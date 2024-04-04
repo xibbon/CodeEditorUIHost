@@ -10,11 +10,14 @@ import CodeEditorUI
 import TreeSitter
 
 struct ContentView: View {
-    @State var state = CodeEditorState (openFiles: [EditedItem(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)])
+    @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
     
     var body: some View {
         CodeEditorShell(state: $state)
             .padding()
+            .onAppear {
+                state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)
+            }
     }
 }
 
