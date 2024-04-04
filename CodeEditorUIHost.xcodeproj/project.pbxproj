@@ -37,6 +37,7 @@
 		4933C7DD2BB73EA800722563 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4933C7DF2BB73EA900722563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4933C7E22BB73EA900722563 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4933C84C2BBF051500722563 /* RunestoneUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RunestoneUI; path = ../RunestoneUI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		4933C7FB2BB7621400722563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4933C84C2BBF051500722563 /* RunestoneUI */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
