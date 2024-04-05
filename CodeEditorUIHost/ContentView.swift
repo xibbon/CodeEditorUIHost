@@ -13,8 +13,18 @@ import Runestone
 struct ContentView: View {
     @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
     
+    static func makeTestData () -> [CompletionEntry] {
+        return [
+            CompletionEntry(kind: .function, display: "print", insert: "print("),
+            CompletionEntry(kind: .function, display: "print_error", insert: "print_error("),
+            CompletionEntry(kind: .function, display: "print_another", insert: "print_another("),
+            CompletionEntry(kind: .class, display: "Poraint", insert: "Poraint"),
+            CompletionEntry(kind: .variable, display: "apriornster", insert: "apriornster"),
+            CompletionEntry(kind: .signal, display: "paraceleuinephedert", insert: "$paraceleuinephedert")
+        ]
+    }
     
-    func onChange (_ state: CodeEditorState, textView: TextView) {
+    func onChange (_ state: CodeEditorState, _ editedItem: EditedItem, textView: TextView) {
         let range = textView.selectedRange
         guard range.length == 0 else {
             // We are not interested in doing completions when there is a selection going
@@ -28,8 +38,14 @@ struct ContentView: View {
             return
         }
         let line = lines [startLoc.lineNumber]
+        
+        guard let r = textView.selectedTextRange else {
+            return
+        }
+        let region = textView.firstRect(for: r)
+
         if line.hasSuffix("pri") {
-            
+            editedItem.requestCompletion (at: region, prefix: "pri", completions: ContentView.makeTestData())
         }
     }
     
