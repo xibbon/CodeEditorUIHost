@@ -65,16 +65,20 @@ struct ContentView: View {
                     state.showLines.toggle()
                 }
             }
-            CodeEditorShell(state: $state)
-                .padding()
-                .onAppear {
-                    _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)
-                    state.onChange = onChange
-                }
+            ZStack {
+                Color.yellow
+                CodeEditorShell(state: $state)
+                    .padding()
+                    .onAppear {
+                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)
+                        state.onChange = onChange
+                    }
+            }
         }
     }
 }
 
 #Preview {
     ContentView()
+        .environment(HostServices.makeTestHostServices ())
 }
