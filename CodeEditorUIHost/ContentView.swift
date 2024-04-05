@@ -18,6 +18,9 @@ struct ContentView: View {
             CompletionEntry(kind: .function, display: "print", insert: "print("),
             CompletionEntry(kind: .function, display: "print_error", insert: "print_error("),
             CompletionEntry(kind: .function, display: "print_another", insert: "print_another("),
+            CompletionEntry(kind: .function, display: "print_dump", insert: "print_dump("),
+            CompletionEntry(kind: .function, display: "print_stack", insert: "print_another("),
+            CompletionEntry(kind: .function, display: "print_trebble", insert: "print_another("),
             CompletionEntry(kind: .class, display: "Poraint", insert: "Poraint"),
             CompletionEntry(kind: .variable, display: "apriornster", insert: "apriornster"),
             CompletionEntry(kind: .signal, display: "paraceleuinephedert", insert: "$paraceleuinephedert")
@@ -50,12 +53,25 @@ struct ContentView: View {
     }
     
     var body: some View {
-        CodeEditorShell(state: $state)
-            .padding()
-            .onAppear {
-                _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)
-                state.onChange = onChange
+        VStack {
+            HStack {
+                Button ("Toggle Tabs") {
+                    state.showTabs.toggle()
+                }
+                Button ("Toggle Spaces"){
+                    state.showSpaces.toggle()
+                }
+                Button ("Toggle Line#") {
+                    state.showLines.toggle()
+                }
             }
+            CodeEditorShell(state: $state)
+                .padding()
+                .onAppear {
+                    _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", data: nil)
+                    state.onChange = onChange
+                }
+        }
     }
 }
 
