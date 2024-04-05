@@ -48,7 +48,9 @@ struct ContentView: View {
         let region = textView.firstRect(for: r)
 
         if line.hasSuffix("pri") {
-            editedItem.requestCompletion (at: region, prefix: "pri", completions: ContentView.makeTestData())
+            editedItem.requestCompletion (at: region, on: textView, prefix: "pri", completions: ContentView.makeTestData())
+        } else {
+            editedItem.cancelCompletion()
         }
     }
     
