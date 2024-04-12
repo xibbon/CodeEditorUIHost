@@ -11,7 +11,6 @@ import TreeSitter
 import Runestone
 
 class MyDelegate: EditedItemDelegate {
-    
     static func makeTestData () -> [CompletionEntry] {
         return [
             CompletionEntry(kind: .function, display: "print", insert: "print("),
@@ -26,6 +25,10 @@ class MyDelegate: EditedItemDelegate {
         ]
     }
     
+    func started(editedItem: CodeEditorUI.EditedItem, textView: Runestone.TextView) {
+        
+    }
+
     func editedTextChanged(_ editedItem: CodeEditorUI.EditedItem, _ textView: Runestone.TextView) {
         
         let range = textView.selectedRange
@@ -89,7 +92,8 @@ struct ContentView: View {
                 Button ("Goto Line 1") {
                     state.goTo(line: 0)
                 }
-
+                Text ("Drag me to the editor")
+                    .draggable(URL (string: "file:///res://demo.org")!)
             }
             ZStack {
                 Color.yellow
