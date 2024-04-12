@@ -10,6 +10,7 @@ import CodeEditorUI
 import TreeSitter
 import Runestone
 
+@MainActor
 class MyDelegate: EditedItemDelegate {
     static func makeTestData () -> [CompletionEntry] {
         return [
@@ -69,6 +70,7 @@ class MyDelegate: EditedItemDelegate {
     }
 }
 
+@MainActor
 struct ContentView: View {
     @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
     @State var delegate = MyDelegate ()
