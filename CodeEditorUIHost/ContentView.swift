@@ -12,6 +12,9 @@ import Runestone
 
 @MainActor
 class MyDelegate: EditedItemDelegate {
+    deinit {
+        print ("Fuck")
+    }
     static func makeTestData () -> [CompletionEntry] {
         return [
             CompletionEntry(kind: .function, display: "print", insert: "print("),
@@ -28,6 +31,15 @@ class MyDelegate: EditedItemDelegate {
     
     func started(editedItem: CodeEditorUI.EditedItem, textView: Runestone.TextView) {
         
+    }
+    
+    /// Implements breakpoint toggling
+    func gutterTapped(_ editedItem: EditedItem, _ textView: TextView, _ line: Int) {
+        if editedItem.breakpoints.contains(line) {
+            editedItem.breakpoints.remove (line)
+        } else {
+            editedItem.breakpoints.insert (line)
+        }
     }
 
     func editedTextChanged(_ editedItem: CodeEditorUI.EditedItem, _ textView: Runestone.TextView) {
@@ -74,7 +86,8 @@ class MyDelegate: EditedItemDelegate {
 struct ContentView: View {
     @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
     @State var delegate = MyDelegate ()
-    
+    @State var breakUtils = [0, 26, 120]
+    @State var breakEmpty = [2]
     
     var body: some View {
         VStack {
@@ -94,6 +107,12 @@ struct ContentView: View {
                 Button ("Goto Line 1") {
                     state.goTo(line: 0)
                 }
+                Button ("+Mult") {
+                    state.lineHeightMultiplier += 0.1
+                }
+                Button ("-Mult") {
+                    state.lineHeightMultiplier -= 0.1
+                }
                 Text ("Drag me to the editor")
                     .draggable(URL (string: "file:///res://demo.org")!)
             }
@@ -102,8 +121,8 @@ struct ContentView: View {
                 CodeEditorShell(state: $state)
                     .padding()
                     .onAppear {
-                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect)
-                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: nil, fileHint: .detect)
+                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
+                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
 
                     }
             }
