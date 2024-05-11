@@ -118,12 +118,17 @@ struct ContentView: View {
             }
             ZStack {
                 Color.yellow
-                CodeEditorShell(state: $state)
+                CodeEditorShell(state: $state) { urlRequest in
+                    print ("Loading \(urlRequest)")
+                    return nil
+                } emptyView: {
+                    Text ("No Files Open")
+                }
                     .padding()
                     .onAppear {
                         _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
                         _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
-
+                        _ = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>hello <b>there</b></html>")
                     }
             }
         }
