@@ -61,7 +61,8 @@ class MyDelegate: EditedItemDelegate {
         guard let r = textView.selectedTextRange else {
             return
         }
-        let region = textView.firstRect(for: r)
+        var region = textView.firstRect(for: r)
+        region.origin.y -= textView.contentOffset.y
 
         if line.hasSuffix("pri") {
             editedItem.requestCompletion (at: region, on: textView, prefix: "pri", completions: MyDelegate.makeTestData())
@@ -88,6 +89,7 @@ struct ContentView: View {
     @State var delegate = MyDelegate ()
     @State var breakUtils = [0, 26, 120]
     @State var breakEmpty = [2]
+    @State var htmlItem: HtmlItem? = nil
     
     var body: some View {
         VStack {
@@ -115,6 +117,9 @@ struct ContentView: View {
                 }
                 Text ("Drag me to the editor")
                     .draggable(URL (string: "file:///res://demo.org")!)
+                Button ("Scroll Html") {
+                    htmlItem?.anchor = "anchor-190"
+                }
             }
             ZStack {
                 Color.yellow
@@ -128,7 +133,11 @@ struct ContentView: View {
                     .onAppear {
                         _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
                         _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
-                        _ = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>hello <b>there</b></html>")
+                        var text = ""
+                        for x in 0..<200 {
+                            text += "<a id='anchor-\(x)'/><p>LOCATION \(x)</p>"
+                        }
+                        htmlItem = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>\(text)", anchor: "anchor-100")
                     }
             }
         }
