@@ -12,6 +12,14 @@ import Runestone
 
 @MainActor
 class MyDelegate: EditedItemDelegate {
+    func lookup(_ editedItem: CodeEditorUI.EditedItem, on: Runestone.TextView, at: UITextPosition, word: String) {
+        print ("Lookup word")
+    }
+    
+    func lookup(_ editedItem: CodeEditorUI.EditedItem, word: String) {
+        print ("Looking up \(word)")
+    }
+    
     deinit {
         print ("Fuck")
     }
@@ -131,13 +139,13 @@ struct ContentView: View {
                 }
                     .padding()
                     .onAppear {
-                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
-                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
                         var text = ""
                         for x in 0..<200 {
                             text += "<a id='anchor-\(x)'/><p>LOCATION \(x)</p>"
                         }
                         htmlItem = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>\(text)", anchor: "anchor-100")
+                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
+                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
                     }
             }
         }
