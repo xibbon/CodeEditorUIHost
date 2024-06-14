@@ -12,6 +12,10 @@ import Runestone
 
 @MainActor
 class MyDelegate: EditedItemDelegate {
+    func closing(_ editedItem: CodeEditorUI.EditedItem) {
+        print ("Closing item")
+    }
+    
     func lookup(_ editedItem: CodeEditorUI.EditedItem, on: Runestone.TextView, at: UITextPosition, word: String) {
         print ("Lookup word")
     }
@@ -98,9 +102,10 @@ struct ContentView: View {
     @State var breakUtils = [0, 26, 120]
     @State var breakEmpty = [2]
     @State var htmlItem: HtmlItem? = nil
-    
+    @State var visible = false
     var body: some View {
         VStack {
+            Toggle(isOn: $visible) { Text ("Visible")}
             HStack {
                 Button ("Toggle Tabs") {
                     state.showTabs.toggle()
@@ -131,12 +136,15 @@ struct ContentView: View {
             }
             ZStack {
                 Color.yellow
-                CodeEditorShell(state: $state) { urlRequest in
-                    print ("Loading \(urlRequest)")
-                    return nil
-                } emptyView: {
-                    Text ("No Files Open")
-                }
+                if visible {
+                    Text ("Clear")
+                } else {
+                    CodeEditorShell(state: $state) { urlRequest in
+                        print ("Loading \(urlRequest)")
+                        return nil
+                    } emptyView: {
+                        Text ("No Files Open")
+                    }
                     .padding()
                     .onAppear {
                         var text = ""
@@ -147,6 +155,7 @@ struct ContentView: View {
                         _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
                         _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
                     }
+                }
             }
         }
     }
