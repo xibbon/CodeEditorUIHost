@@ -152,8 +152,8 @@ struct ContentView: View {
                             text += "<a id='anchor-\(x)'/><p>LOCATION \(x)</p>"
                         }
                         htmlItem = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>\(text)", anchor: "anchor-100")
-                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: breakEmpty)
-                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: breakUtils)
+                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: Set<Int>(breakEmpty))
+                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: Set<Int>(breakUtils))
                     }
                 }
             }
