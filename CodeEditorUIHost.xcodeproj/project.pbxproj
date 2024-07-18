@@ -29,6 +29,8 @@
 		4933C83E2BBB4EE800722563 /* TreeSitterMarkdownQueries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C83D2BBB4EE800722563 /* TreeSitterMarkdownQueries */; };
 		4933C8402BBB4EE800722563 /* TreeSitterMarkdownRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C83F2BBB4EE800722563 /* TreeSitterMarkdownRunestone */; };
 		4933C8432BBCA80C00722563 /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8422BBCA80C00722563 /* CodeEditorUI */; };
+		49436C832C49889000A921F9 /* utils.notest.gd in Resources */ = {isa = PBXBuildFile; fileRef = 49436C812C49889000A921F9 /* utils.notest.gd */; };
+		49436C842C49889000A921F9 /* empty.gd in Resources */ = {isa = PBXBuildFile; fileRef = 49436C822C49889000A921F9 /* empty.gd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		4933C7E22BB73EA900722563 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4933C84C2BBF051500722563 /* RunestoneUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RunestoneUI; path = ../RunestoneUI; sourceTree = "<group>"; };
 		493A3D812BEBEF2200D18CF2 /* Runestone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Runestone; path = ../Runestone; sourceTree = "<group>"; };
+		49436C812C49889000A921F9 /* utils.notest.gd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utils.notest.gd; sourceTree = "<group>"; };
+		49436C822C49889000A921F9 /* empty.gd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = empty.gd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		4933C7DA2BB73EA800722563 /* CodeEditorUIHost */ = {
 			isa = PBXGroup;
 			children = (
+				49436C802C49886800A921F9 /* Data */,
 				4933C7DB2BB73EA800722563 /* CodeEditorUIHostApp.swift */,
 				4933C7DD2BB73EA800722563 /* ContentView.swift */,
 				4933C7DF2BB73EA900722563 /* Assets.xcassets */,
@@ -113,6 +118,15 @@
 				4933C84C2BBF051500722563 /* RunestoneUI */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49436C802C49886800A921F9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				49436C822C49889000A921F9 /* empty.gd */,
+				49436C812C49889000A921F9 /* utils.notest.gd */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +212,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49436C842C49889000A921F9 /* empty.gd in Resources */,
 				4933C7E32BB73EA900722563 /* Preview Assets.xcassets in Resources */,
+				49436C832C49889000A921F9 /* utils.notest.gd in Resources */,
 				4933C7E02BB73EA900722563 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

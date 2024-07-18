@@ -95,6 +95,10 @@ class MyDelegate: EditedItemDelegate {
     }
 }
 
+func getSampleFiles () -> [String] {
+    return Bundle.main.paths(forResourcesOfType: ".gd", inDirectory: nil)
+}
+
 @MainActor
 struct ContentView: View {
     @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
@@ -103,6 +107,8 @@ struct ContentView: View {
     @State var breakEmpty = [2]
     @State var htmlItem: HtmlItem? = nil
     @State var visible = false
+    @State var sampleFiles = getSampleFiles()
+
     var body: some View {
         VStack {
             Toggle(isOn: $visible) { Text ("Visible")}
@@ -152,8 +158,9 @@ struct ContentView: View {
                             text += "<a id='anchor-\(x)'/><p>LOCATION \(x)</p>"
                         }
                         htmlItem = state.openHtml (title: "Demo", path: "demo.html", content: "<html><body>\(text)", anchor: "anchor-100")
-                        _ =  state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript//editor/script_templates/Object/empty.gd", delegate: delegate, fileHint: .detect, breakpoints: Set<Int>(breakEmpty))
-                        _ = state.openFile(path: "/Users/miguel/cvs/godot-master/modules/gdscript/tests/scripts/utils.notest.gd", delegate: delegate, fileHint: .detect, breakpoints: Set<Int>(breakUtils))
+                        for sampleFile in sampleFiles {
+                            _ =  state.openFile(path: sampleFile, delegate: delegate, fileHint: .detect, breakpoints: Set<Int>(breakUtils))
+                        }
                     }
                 }
             }
