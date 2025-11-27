@@ -11,11 +11,9 @@ import Foundation
 
 @main
 struct CodeEditorUIHostApp: App {
-    @State var hostServices = HostServices.makeTestHostServices ()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(hostServices)
         }
     }
 }

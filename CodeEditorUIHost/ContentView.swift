@@ -12,6 +12,11 @@ import Runestone
 
 @MainActor
 class MyDelegate: EditedItemDelegate {
+    func save(editedItem: CodeEditorUI.EditedItem, contents: String, newPath: String?) -> CodeEditorUI.HostServiceIOError? {
+        print("Attempt to save")
+        return nil
+    }
+    
     func closing(_ editedItem: CodeEditorUI.EditedItem) {
         print ("Closing item")
     }
@@ -101,7 +106,7 @@ func getSampleFiles () -> [String] {
 
 @MainActor
 struct ContentView: View {
-    @State var state = CodeEditorState (hostServices: HostServices.makeTestHostServices())
+    @State var state = CodeEditorState ()
     @State var delegate = MyDelegate ()
     @State var breakUtils = [0, 26, 120]
     @State var breakEmpty = [2]
@@ -145,11 +150,15 @@ struct ContentView: View {
                 if visible {
                     Text ("Clear")
                 } else {
-                    CodeEditorShell(state: $state) { urlRequest in
+                    CodeEditorShell(state: state) { urlRequest in
                         print ("Loading \(urlRequest)")
                         return nil
                     } emptyView: {
                         Text ("No Files Open")
+                    } codeEditorMenu: {
+                        EmptyView()
+                    } tabExtension: {
+                        EmptyView()
                     }
                     .padding()
                     .onAppear {
@@ -170,5 +179,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(HostServices.makeTestHostServices ())
 }
