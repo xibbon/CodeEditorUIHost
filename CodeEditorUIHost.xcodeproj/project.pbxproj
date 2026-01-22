@@ -11,26 +11,26 @@
 		4933C7DE2BB73EA800722563 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933C7DD2BB73EA800722563 /* ContentView.swift */; };
 		4933C7E02BB73EA900722563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4933C7DF2BB73EA900722563 /* Assets.xcassets */; };
 		4933C7E32BB73EA900722563 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4933C7E22BB73EA900722563 /* Preview Assets.xcassets */; };
-		4933C7EB2BB73EC300722563 /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C7EA2BB73EC300722563 /* CodeEditorUI */; };
-		4933C7EE2BB742CA00722563 /* TreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C7ED2BB742CA00722563 /* TreeSitter */; };
-		4933C8242BBB4EE800722563 /* TreeSitterGDScript in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8232BBB4EE800722563 /* TreeSitterGDScript */; };
-		4933C8262BBB4EE800722563 /* TreeSitterGDScriptQueries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8252BBB4EE800722563 /* TreeSitterGDScriptQueries */; };
-		4933C8282BBB4EE800722563 /* TreeSitterGDScriptRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8272BBB4EE800722563 /* TreeSitterGDScriptRunestone */; };
-		4933C82A2BBB4EE800722563 /* TreeSitterJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8292BBB4EE800722563 /* TreeSitterJSON */; };
-		4933C82C2BBB4EE800722563 /* TreeSitterJSON5 in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C82B2BBB4EE800722563 /* TreeSitterJSON5 */; };
-		4933C82E2BBB4EE800722563 /* TreeSitterJSON5Queries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C82D2BBB4EE800722563 /* TreeSitterJSON5Queries */; };
-		4933C8302BBB4EE800722563 /* TreeSitterJSON5Runestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C82F2BBB4EE800722563 /* TreeSitterJSON5Runestone */; };
-		4933C8322BBB4EE800722563 /* TreeSitterJSONQueries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8312BBB4EE800722563 /* TreeSitterJSONQueries */; };
-		4933C8342BBB4EE800722563 /* TreeSitterJSONRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8332BBB4EE800722563 /* TreeSitterJSONRunestone */; };
-		4933C8362BBB4EE800722563 /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8352BBB4EE800722563 /* TreeSitterMarkdown */; };
-		4933C8382BBB4EE800722563 /* TreeSitterMarkdownInline in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8372BBB4EE800722563 /* TreeSitterMarkdownInline */; };
-		4933C83A2BBB4EE800722563 /* TreeSitterMarkdownInlineQueries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8392BBB4EE800722563 /* TreeSitterMarkdownInlineQueries */; };
-		4933C83C2BBB4EE800722563 /* TreeSitterMarkdownInlineRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C83B2BBB4EE800722563 /* TreeSitterMarkdownInlineRunestone */; };
-		4933C83E2BBB4EE800722563 /* TreeSitterMarkdownQueries in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C83D2BBB4EE800722563 /* TreeSitterMarkdownQueries */; };
-		4933C8402BBB4EE800722563 /* TreeSitterMarkdownRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C83F2BBB4EE800722563 /* TreeSitterMarkdownRunestone */; };
-		4933C8432BBCA80C00722563 /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8422BBCA80C00722563 /* CodeEditorUI */; };
+		4933C7EB2BB73EC300722563 /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C7EA2BB73EC300722563 /* CodeEditorUI */; settings = {ATTRIBUTES = (Required, ); }; };
+		4933C7EE2BB742CA00722563 /* TreeSitter in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C7ED2BB742CA00722563 /* TreeSitter */; };
+		4933C8242BBB4EE800722563 /* TreeSitterGDScript in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8232BBB4EE800722563 /* TreeSitterGDScript */; };
+		4933C8262BBB4EE800722563 /* TreeSitterGDScriptQueries in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8252BBB4EE800722563 /* TreeSitterGDScriptQueries */; };
+		4933C8282BBB4EE800722563 /* TreeSitterGDScriptRunestone in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8272BBB4EE800722563 /* TreeSitterGDScriptRunestone */; };
+		4933C82A2BBB4EE800722563 /* TreeSitterJSON in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8292BBB4EE800722563 /* TreeSitterJSON */; };
+		4933C82C2BBB4EE800722563 /* TreeSitterJSON5 in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C82B2BBB4EE800722563 /* TreeSitterJSON5 */; };
+		4933C82E2BBB4EE800722563 /* TreeSitterJSON5Queries in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C82D2BBB4EE800722563 /* TreeSitterJSON5Queries */; };
+		4933C8302BBB4EE800722563 /* TreeSitterJSON5Runestone in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C82F2BBB4EE800722563 /* TreeSitterJSON5Runestone */; };
+		4933C8322BBB4EE800722563 /* TreeSitterJSONQueries in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8312BBB4EE800722563 /* TreeSitterJSONQueries */; };
+		4933C8342BBB4EE800722563 /* TreeSitterJSONRunestone in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8332BBB4EE800722563 /* TreeSitterJSONRunestone */; };
+		4933C8362BBB4EE800722563 /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8352BBB4EE800722563 /* TreeSitterMarkdown */; };
+		4933C8382BBB4EE800722563 /* TreeSitterMarkdownInline in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8372BBB4EE800722563 /* TreeSitterMarkdownInline */; };
+		4933C83A2BBB4EE800722563 /* TreeSitterMarkdownInlineQueries in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C8392BBB4EE800722563 /* TreeSitterMarkdownInlineQueries */; };
+		4933C83C2BBB4EE800722563 /* TreeSitterMarkdownInlineRunestone in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C83B2BBB4EE800722563 /* TreeSitterMarkdownInlineRunestone */; };
+		4933C83E2BBB4EE800722563 /* TreeSitterMarkdownQueries in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C83D2BBB4EE800722563 /* TreeSitterMarkdownQueries */; };
+		4933C8402BBB4EE800722563 /* TreeSitterMarkdownRunestone in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4933C83F2BBB4EE800722563 /* TreeSitterMarkdownRunestone */; };
 		49436C832C49889000A921F9 /* utils.notest.gd in Resources */ = {isa = PBXBuildFile; fileRef = 49436C812C49889000A921F9 /* utils.notest.gd */; };
 		49436C842C49889000A921F9 /* empty.gd in Resources */ = {isa = PBXBuildFile; fileRef = 49436C822C49889000A921F9 /* empty.gd */; };
+		4980780E2F1FD48C00D725DE /* CodeEditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4933C8422BBCA80C00722563 /* CodeEditorUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4980780E2F1FD48C00D725DE /* CodeEditorUI in Frameworks */,
 				4933C7EB2BB73EC300722563 /* CodeEditorUI in Frameworks */,
 				4933C82A2BBB4EE800722563 /* TreeSitterJSON in Frameworks */,
 				4933C7EE2BB742CA00722563 /* TreeSitter in Frameworks */,
@@ -62,7 +63,6 @@
 				4933C8242BBB4EE800722563 /* TreeSitterGDScript in Frameworks */,
 				4933C83A2BBB4EE800722563 /* TreeSitterMarkdownInlineQueries in Frameworks */,
 				4933C83C2BBB4EE800722563 /* TreeSitterMarkdownInlineRunestone in Frameworks */,
-				4933C8432BBCA80C00722563 /* CodeEditorUI in Frameworks */,
 				4933C8362BBB4EE800722563 /* TreeSitterMarkdown in Frameworks */,
 				4933C82E2BBB4EE800722563 /* TreeSitterJSON5Queries in Frameworks */,
 				4933C8322BBB4EE800722563 /* TreeSitterJSONQueries in Frameworks */,
@@ -362,6 +362,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CodeEditorUIHost/Preview Content\"";
 				DEVELOPMENT_TEAM = YLLAGX2NRU;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -377,6 +379,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tirania.CodeEditorUIHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,6 +397,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CodeEditorUIHost/Preview Content\"";
 				DEVELOPMENT_TEAM = YLLAGX2NRU;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -407,6 +414,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tirania.CodeEditorUIHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
