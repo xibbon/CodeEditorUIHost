@@ -403,6 +403,9 @@ struct ContentView: View {
                 Button ("Goto Line 1") {
                     state.goTo(line: 0)
                 }
+                Button ("Highlight Line 3") {
+                    state.getCurrentEditedItem()?.currentLine = 3
+                }
                 Button ("+Mult") {
                     state.lineHeightMultiplier += 0.1
                 }
